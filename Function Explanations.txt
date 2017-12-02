@@ -1,0 +1,101 @@
+Function Explanations
+This project contanis 4 class;
+In this class we have;TestList_AndTree,List,Tree,student_tree,students, student_list.
+TestList_AndTree:It has the main function of these other classes.
+List: It has the functions associated with the LinkedList.
+Tree: It has the functions associated with the Tree.
+Students: Common parameters associated with the students in this class.
+Student_tree:Common parameters associated with the tree in this class.
+Student_list: Common parameters associated with the list in this class.
+Students Class
+It contains parameters that every students need and functions which calls parameters.
+Student_list Class
+"list" in the lowest part java file.It contains common parameters and functions for creating "List"."students Class" is extended.
+Student_tree Class
+"tree" in the lowest part java file. It contains common parameters common parameters, BST parameters and functions."students Class" is extended.
+List Class
+We imported "java.util" for all requirements.Firstly we are defining variables for head and tail of "inked list" (student_tree type). In find method;we are defining the counter which finds the intended stundent at which part.We need the arrayList to print different names(case5) so we are assigning arrayList.
+public int menu()
+We are printing options on screen and taking value from user. the value is being sent with "return" to "temp" class.(27th line).
+public void add()
+we are assinging parameters into "student_list" type linkedlist.we are assigning first value of linkedlist into temp"variable".If first value is empty,we are assigning the value that comes to first value(30th line).If it isn't when the variable is empty, we are making a loop with exit. If the entered value in the linkedlist,we are exiting from loop without adding value to linkedlist so this prevents that more students have the same number.If this condition(36th line) can not be provided loop will continue.When the empty part comes, loop will break and data will be recorded to this part.
+public void delete()
+we are assigning first values of list to "temp" and "previous".If the list is empty error will be printed on screen and we will skipping the other part. If the list isn't empty, we are starting loop for checking the value if it is in the list.The cycle will be broken if the values matched or there will be no more element.If the cycle is broken because there is no more questionanble part, the vaulue that entered isn't in the list.warning will be printed on screen and we are exiting from this function (67th line). If the value that entered will be founded in the list;
+-We are checking the the list if its the list with single element.
+-If the list is with single element data will be deleted (76th line)
+If the list isn't with single element, we are checking if it is equal to first element.If its equal the second element is written on the first element,if it is not we are checking the last element and same operation will be applied at last element. If the value isn't equal to first and last element;data which comes before the data that equals the value,connects to the data which  comes after the data that equals to value.
+public void find ()
+we assigned first value of list to the "temp" variable.The list is empty warning message will be printed on screen and exiting from function.If it isn't empty, we are starting loop until the empty part or the matched part.We are printing "no records found" on screen if the loop is broken because we are attaining the empty part.If the value broke because the value that entered value matched with data, we are printing the parameters of data on screen.Also we are pointing out at which loop.We are reseting the loop before exiting so on the next search the amount of loop will be correct.
+public void list_all_students()
+We are transferring first value to "temp" variable.we are creating a loop that will be broken when it reaches to the empty data.We are printing data on screen in this loop.
+public void list_distinct_name()
+We are transferring first value to "temp" variable.We are defining string type "name" variable.We are creating a loop that breaks when it reaches to the empty data. If the the arraylist is empty, we are transferring the name part of data to arraylist and we are going to the next part.If the arraylist isn't empty,we are assigng the name to "name" variable.If name is in the array,we are not adding to array, if it is'nt we are adding.When these operations done,there will be "different" names in array.We are making alphabetical sequence with “Collections.sort()” function.We are printing names in the array on screen with "for" loop.
+NOTE: “collections.sort()”,”.add()”,”.size()”,“.contains()”these function are taken from java.util.ArrayList library.
+
+public void distinct_name_count()
+We are transferring first value to "temp" variable.We are creating a loop that will be broken when it reaches to the empty data.If the the arraylist is empty, we are transferring the name part of first data to arraylist and we are going to the next part.We need a hashmap type variable for writing different names and amounts.We are defining hashmap type variable.We are transferring names in the array to this variable.At the same time we are determinating the amounts.Then we are transferring to treemap type variable.We are calling printMap() function,method handles with the rest.For the nex operation we are cleaning datas in the array.
+NOTE: “.clear()” funciton is taken from java.util.ArrayList library, “get()” funciton is taken from java.util.Map library.
+
+public static void printMap()
+"map" variable prints datas on screen, when the datas ends loop is broken.
+public void author()
+This function writes names of programmers on screen.
+
+we imported all we needed to the java.util library.
+Tree Class
+We imported all we needed to the java.util library.
+public int control()
+This will check if the list empty or not and gonna return that.
+
+public void add tree(student tree dataTree)
+If the list is empty,it will transfer the incoming value to the list.If the list is not empty ; we transfer our first value with the variable "temp".If the student number (user's input) is greater than the number that have been questioned,then the element at the right will be questioned.If it's smaller then the elements at the left side will be questioned.Method will call itself by recursion and will be placed at an appropriate place in the list.If the student number equals to another number in the list,student won't be saved.
+
+void delete_tree() 
+We transfer the root information to the variable "temp".We send the user's input and the variable "temp" to the function that will do the deleting process.NOTE : Since the functione is going to use recursion it'll ask for a variable like student_tree and since the user wants that student we can't possibly know that before the process.Therefore we are sending this value as the head value.
+
+public void delete()
+If the tree is empty,transactions will be skipped due to there is nothing to delete.Otherwise;If user's value (input) is lesser than the value in the questioned part then questioning process will be at the left leaf of the tree.If user's value is greater than the value in the questioned part then questioning process will be at he right leaf of the tree.If they are equal, there will be three ways to delete.if the leaf got two branches,first, the leaf with greatest value at the left leaf will be found(line98th).Information inside this leaf will transfered to the leaf we are currently in and the leaf will be deleted.Single child.If the child is the left leaf,function will be called again for the left leaf.If the child is right leaf,function will be called again for the right leaf.If leaf don't have any branches,then the leaf will be deleted.
+private student_tree max()
+If there is a leaf the right side of the leaf, method will be called for the right leaf.When there is no right leaf at the leaf,the rightest will be sent back as the greatest leaf of the tree.
+
+ public void find_tree()
+We are transfering the informations inside the root to the variable "temp".When the variable "temp" is empty or when the input found in the tree we are starting a loop which is going to be breaked.If the number is found the loop will break otherwise it'll check the next leaf.(If the value is greater than the value in the questioned part then it'll go to the right,if its lesser it will go left.).If the loop breaks because variable ends up empty,then it means the value couldn't be found.A warning will be printed out.If the loop is broken because a value had been found then the student information will be printed out.
+
+public void traversal()
+We are transfering the informations inside the root to the variable "temp".There are 3 ways to roam the tree.We are calling methods in an order.
+
+ private void preorder()
+First step is visiting the root.This one roams left tree starting from the root ,always goes left firstly,then goes right.As final step,roams the right tree starting from the root still goes left leaves first.
+
+ private void postorder()
+First step starts from left tree, bottom left leaf if there is a grandson at the right of bottom left leaf, it starts from there first,then as a second step it jumps to the bottom left leaf of right tree.If there is a grandson at the right of bottom left leaf,it starts from there.As final step it visits the root
+private void inorder() 
+At first step,starting from bottom left leaf ,all left tree is roamed then it visits root node.At final step right tree is roamed in order(left first then right).
+TEST Class
+We imported java.util.scanner library to be able to use scanner function.We defined list type of data,tree type of tree and int type of choice variables.We used do..while loop which will run the body part at least one time and will keep running as long as the condition is true.When the condition turns to false the loop will end.
+
+do..while()
+First we call the menu at the List class and we transfer the value that comes from the menu into the variable.We run the features which are specified with switch.
+
+Case 0:
+ If user enters 0 ,asking the user if she/he is sure to exit.If user enters 0 again "Çýkýþ yapýldý" will be printed out and will break through the switch with "break" command and since the variable is 0,while condition will be true and loop won't work and program will shut down.
+If user enters a value other than 0 variable will be different than 0 and will break through the switch with "break" command and other cases will be skipped but since the variable different than 0,because of that loop will continiue and menu will be printed out again and it'll ask another value from the user.
+ Case 1:
+This case will ask the user to add student informations that he/she wants to add.This information/values will be sent to methods in list and tree class.After the transactions are done,it will break through the switch with "break" command.
+Case 2:
+This case will ask the user to enter the student's number that she/he wants to delete This information/values will be sent to methods in list and tree class.After the transactions are done,it will break through the switch with "break" command.
+ Case 3:
+This case will ask the user to enter the student's number that she/he wants to look for.This information/values will be sent to methods in list and tree class.After the transactions are done,it will break through the switch with "break" command.
+ Case 4:
+This case will ask the user, what kind of data type he/she wants to search.If the user enters something different than options it'll ask again.If user enters something from the options,transactions on the seleceted options will be done and then loop inside the case will break,then it'll break through the switch with "break" command.
+ * If option is choosen then only List class method will be called.
+ * If option is choosen then only Tree class method will be called.
+ * If option is choosen both of tree and the list methods will be called.
+ Case 5:
+ Method that related to List class will be called.
+ Case 6:
+ Method that related to List class will be called.
+ Case 7:
+ Method that related to List class will be called.
+ default
+If the user enters a number not within the range,a warning will appear on the screen and the loop will continue.
