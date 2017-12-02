@@ -1,0 +1,49 @@
+CSE 2105 – Data Structures
+PROJECT
+Write a program that performs the corresponding operations through the below menu,
+according to the selected option.
+0. Exit
+1. Add student
+2. Delete student
+3. Find student
+4. List all students
+5. List distinct names
+6. List name counts
+7. About
+Enter your selection :
+You should ask the selection until the user enters his selection correctly (between 0-7). When
+the user enters an option between 1-7, corresponding operation in the menu should be
+performed and the menu should be printed again after the operation ends. If the user enters 0,
+you should ask whether he really wants to exit the program. If he is sure, exit the program;
+otherwise, display the menu again. If the user enters an invalid option (not between 0-7), you
+should print a warning message and display the menu again.
+Each student has the following fields :
+-> Student id
+-> Name
+-> Surname
+To store students, you have to implement your own “singly linked list” and “binary search
+tree”. (Instead of using Java Data Structures Libraries you should develop your own data
+structures.).
+Clarifications
+1. This option adds the student both to the list and tree. You should get from the user
+student id, name and surname before adding student. New student should be added to
+the end of the list and appropriate position of the tree according to its student id(i.e
+student id is the key for the tree).
+2. First get the student id from the user and (if found) delete this student from list and
+tree. 
+3. First get the student id from the user and (if found) and print this student’s fields to the
+screen. Also print the number of search levels (how many hops) that you found the
+student from the list and tree.
+4. If the user selects option 4, first ask him from which data structure he/she want to
+operate. If he/she selacts list, print all the student’s information from the list begin to
+end. If he/she selects tree, then print all the student’s information in “preorder”,
+“postorder” and “inorder”.
+5. Print to the screen all the distinct “names” alphabetical (use only names, not
+surnames) from your data structures. (i.e. not list duplicate names to the screen.).
+6. Show that how many of each “name” included in the data structures. (use only names,
+not surnames). List the names alphabetical order. For example you can print like
+following format :
+emre : 2
+ilker : 3
+zeynep : 1
+7. Print the author(s) of the program(your number and name)
